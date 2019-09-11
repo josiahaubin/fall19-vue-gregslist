@@ -22,6 +22,16 @@ export default new Router({
       }
     },
     {
+      path: '/jobs',
+      name: 'jobs',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: function () {
+        return import(/* webpackChunkName: "jobs" */ './views/Jobs.vue')
+      }
+    },
+    {
       path: '/cars/:carId',
       name: 'car',
       // route level code-splitting
