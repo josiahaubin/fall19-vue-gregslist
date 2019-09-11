@@ -1,13 +1,13 @@
 <template>
   <div class="jobs container-fluid">
     <div class="row">
-      <h3></h3>
+      <job v-for="job in jobs" :key="job._id" :jobProp="job" />
     </div>
   </div>
 </template>
 
-
 <script>
+import job from "../components/Job";
 export default {
   name: "jobs",
   data() {
@@ -22,7 +22,9 @@ export default {
     }
   },
   methods: {},
-  components: {}
+  components: {
+    job
+  }
 };
 </script>
 
