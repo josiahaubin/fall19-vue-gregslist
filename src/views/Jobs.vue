@@ -1,5 +1,9 @@
 <template>
-  <div class="jobs"></div>
+  <div class="jobs container-fluid">
+    <div class="row">
+      <h3></h3>
+    </div>
+  </div>
 </template>
 
 
@@ -9,7 +13,14 @@ export default {
   data() {
     return {};
   },
-  computed: {},
+  mounted() {
+    this.$store.dispatch("getJobs");
+  },
+  computed: {
+    jobs() {
+      return this.$store.state.jobs;
+    }
+  },
   methods: {},
   components: {}
 };
